@@ -5,7 +5,7 @@
   
   <div class="panel-body">
     <% @messages.each do |message| %>
-      名前:<%= message.name %>
+      <span class="label label-info"><%= message.name %></span>
       内容:<%= message.body %>
       <br>
     <% end %>
