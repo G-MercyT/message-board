@@ -12,22 +12,26 @@
   </div>
 </div>
 
-<%= form_for(Message.new, class: 'form-inline') do |f| %>
+<%= form_for(@message, class: 'form-inline') do |f| %>
+  <% if @message.errors.present? %>
+  <div class="alert alert-danger">
+    <%= alert %>
+    <ul>
+      <% @message.errors.full_messages.each do |full_message| %>
+      <li>
+        <%= full_message %>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+  <% end %>
   <div class="form-group">
     <label for="exampleName">名前:</label>
-<<<<<<< HEAD
     <%= f.text_field :name, class: "form-control", id: "exampleName", placeholder: "Kira Taro" %>
   </div>
   <div class="form-group">
-    <label for="body">内容:</label>
+    <label for="exampleBody">内容:</label>
     <%= f.text_area :body, class: "form-control", id: "exampleBody", :maxlength => "140" %>
-=======
-    <%= f.text_field :name, class: "form-control", id: "name", placeholder: "Kira Taro" %>
-  </div>
-  <div class="form-group">
-    <label for="body">内容:</label>
-    <%= f.text_area :body, class: "form-control", id: "body" %>
->>>>>>> challenge1
   </div>
   <%= f.submit class: "btn btn-sm btn-primary"%>
 <% end %>
