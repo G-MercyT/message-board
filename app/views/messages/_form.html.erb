@@ -19,5 +19,13 @@
     <label for="exampleBody">内容:</label>
     <%= f.text_area :body, class: "form-control", id: "exampleBody", :maxlength => "140" %>
   </div>
+  <div class="row">
+    <div class="col-xs-2 .col-sm-2">
+      <div class="form-group">
+        <label for="exampleAge">年齢:</label>
+        <%= f.number_field :age, class: "form-control", id: "exampleAge", size: "50px", placeholder: "半角数字のみ" %>
+      </div>
+    </div>
+  </div>
   <%= f.submit class: "btn btn-sm btn-primary"%>
 <% end %>
